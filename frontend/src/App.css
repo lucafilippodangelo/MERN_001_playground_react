@@ -1,0 +1,24 @@
+main {
+  margin-top: 5rem;
+}
+
+.loader {
+  text-align: center;
+  font-size: 2rem;
+}
+
+.ldPersonalisedStyleInAppCss {
+  list-style: none;
+  margin: 2rem;
+  padding:0;
+}
+
+.ldPersonalisedStyleInAppCss li {
+  border: 1px solid #ccc;
+  margin: 1rem 0;
+  padding:1rem;
+}
+
+.wrapperDivClassName h2{
+  text-align: center;
+}
