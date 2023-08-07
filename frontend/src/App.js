@@ -84,7 +84,11 @@ function App() {
 
   //getting the "newGoal", so the parm I do expect as an input parm when invoched in "NewGoal.js"
   const addNewGoalHandler = (newGoal) => { 
-    setCourseGoals(courseGoals.concat(newGoal));
+    //BELOW APPROACH ONE
+    //setCourseGoals(courseGoals.concat(newGoal));
+    //BELOW APPROACH TWO, this is more efficient and react schedule well updates of DOM
+    setCourseGoals(prevCourseGoals => prevCourseGoals.concat(newGoal));
+    
     console.log(courseGoals);
   };
 
