@@ -7,7 +7,11 @@ import React, { useState, useEffect } from 'react';
 import Header from './components/Header/Header';
 import NewProduct from './components/Products/NewProduct';
 import ProductList from './components/Products/ProductList';
-import GoalList from './components/GoalList';
+
+import GoalList from './components/GoalList/GoalList';
+import NewGoal from './components/NewGoal/NewGoal';
+
+
 import './App.css';
 
 function App() {
@@ -84,6 +88,9 @@ function App() {
           <ul>
           <GoalList goals={courseGoals} /> 
           </ul>
+        </div>
+        <div>
+          <NewGoal/>
         </div>
         <NewProduct onAddProduct={addProductHandler} />
         {isLoading && <p className="loader">Loading...</p>}
