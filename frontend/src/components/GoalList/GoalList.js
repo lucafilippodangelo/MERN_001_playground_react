@@ -9,12 +9,8 @@ const GoalList = props =>{
           {/*LD Instead to go statically I load the list items by mapping "map" each prob element,
           so in array. "map" will return a new array of elements that got translated from Javascript to JSX  */}
             {props.goals.map(anArrayElementInJavascript => 
-              {return <li key={anArrayElementInJavascript.id}>{anArrayElementInJavascript.text}</li>})
+              {return <li key={anArrayElementInJavascript.id}> {anArrayElementInJavascript.text} </li>})
             }
-        
-        {/* <li>list item one</li>
-        <li>list item two</li>
-        <li>list item three f</li> */}
       </ul>
     );
 };

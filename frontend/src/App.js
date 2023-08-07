@@ -69,18 +69,28 @@ function App() {
     }
   };
 
+  //we will give those in input to "GoalList.js" 
   const courseGoals = [
     {id: 'cg1', text: 'Finish the Course'},
     {id: 'cg2', text: 'Learn all about the Course Main Topic'},
     {id: 'cg3', text: 'Help other students in the Course Q&A'},
   ];
 
+  //getting the "newGoal", so the parm I do expect as an input parm when invoched in "NewGoal.js"
+  const addNewGoalHandler = (newGoal) => { 
+    courseGoals.push(newGoal);
+    console.log(courseGoals);
+  };
+
+
   //LD the below jsx is translated in javascript
   // where "Header", "NewProduct", "ProductList" are react component/
   // the components are imported on the top of this file. Folder "Components"
   return (
     <React.Fragment>
-      {/* //LD I pass an array as prop in order to dynamically render */}
+      {/* //LD I pass an array to "GoalList" as prop in order to dynamically render */}
+      {/* //LD I pass "addNewGoalHandler" to the prop "onAddGoal" of component "NewGoal".
+      ATTENTION I pass the pointer to the function by the prop.. not the execution of it. */}
       <Header />
       <main>
         <div> 
@@ -90,7 +100,7 @@ function App() {
           </ul>
         </div>
         <div>
-          <NewGoal/>
+          <NewGoal onAddGoal={addNewGoalHandler}l/>
         </div>
         <NewProduct onAddProduct={addProductHandler} />
         {isLoading && <p className="loader">Loading...</p>}
