@@ -69,16 +69,22 @@ function App() {
     }
   };
 
-  //we will give those in input to "GoalList.js" 
-  const courseGoals = [
+  // we will give those in input to "GoalList.js" 
+  // LD "useState" always return 2 elements, I want to extract in an array.
+  // so I can use the array "courseGoals" and it's content + I can set the content
+  // using "setCourseGoals".
+  // that's the way to RE-RENDER the list with the new data
+ const [courseGoals, setCourseGoals] =  useState([
     {id: 'cg1', text: 'Finish the Course'},
     {id: 'cg2', text: 'Learn all about the Course Main Topic'},
-    {id: 'cg3', text: 'Help other students in the Course Q&A'},
-  ];
+    {id: 'cg3', text: 'Help other students in the Course Q&A'}
+  ]);
+  
+
 
   //getting the "newGoal", so the parm I do expect as an input parm when invoched in "NewGoal.js"
   const addNewGoalHandler = (newGoal) => { 
-    courseGoals.push(newGoal);
+    setCourseGoals(courseGoals.concat(newGoal));
     console.log(courseGoals);
   };
 
